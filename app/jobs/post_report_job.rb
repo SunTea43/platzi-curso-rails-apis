@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Job to send emails about posts
 class PostReportJob < ApplicationJob
   queue_as :default
 

@@ -1,15 +1,17 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :post do
     title { Faker::Lorem.sentence }
     content { Faker::Lorem.paragraph }
-    published { 
+    published do
       r = rand(0..1)
-      if r == 0
+      if r.zero?
         false
       else
         true
       end
-    }
+    end
     user
   end
 
@@ -19,5 +21,4 @@ FactoryBot.define do
     published { true }
     user
   end
-
 end

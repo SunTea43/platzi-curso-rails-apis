@@ -1,6 +1,8 @@
-class PostReportMailer < ApplicationMailer
+# frozen_string_literal: true
 
-  def post_report(user, post, post_report)
+# Mailer for single post
+class PostReportMailer < ApplicationMailer
+  def post_report(user, post, _post_report)
     @post = post
     mail to: user.email, subject: "Post #{post.id} report"
   end

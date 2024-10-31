@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require 'net/http'
 require 'uri'
 
+# :nodoc:
 class JsonWebToken
   def self.verify(token)
     JWT.decode(token, nil,
