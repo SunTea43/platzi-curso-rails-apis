@@ -4,7 +4,7 @@ module Secured
       return
     end
     render json: {error: 'Unauthorized'}, status: :unauthorized
-  rescue JWT::VerificationError, JWT::DecodeError
+  rescue JWT::VerificationError, JWT::DecodeError, Exception
     render json: {error: 'Unauthorized'}, status: :unauthorized
   end
 

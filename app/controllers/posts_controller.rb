@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:create, :update]
 
   rescue_from Exception do |e|
-    render json: {error: e.message}, status: :internal_error
+    render json: {error: e.message}, status: :internal_server_error
   end
 
   rescue_from ActiveRecord::RecordNotFound do |e|
